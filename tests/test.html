@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<head>
+
+</head>
+
+<body>
+
+	<script>
+	var confToCheck = {
+		pagination: {
+				maxPaginationButtons: 3,
+				morePagesIndicators: true,
+				maxValues: 5,
+				maxValueSelect: [5, 10, 15]
+			}
+	}
+
+	var metaConfig = [
+			{
+				configPropertyName: 'pagination',
+				mustBeTypeOf: ['bool', 'object'],
+				defaultValue: false,
+				children: [
+					{
+						configPropertyName: 'server',
+						mustBeTypeOf: ['bool', 'object'],
+						defaultValue: false,
+						dependsOn: ['offsetUrlParameter', 'maxValueUrlParameter', 'responseCountProperty'],
+						children: [
+							{
+								configPropertyName: 'offsetUrlParameter',
+								mustBeTypeOf: ['string'],
+								notNull: true
+							},
+							{
+								configPropertyName: 'maxValueUrlParameter',
+								mustBeTypeOf: ['string'],
+								notNull: true
+							},
+							{
+								configPropertyName: 'responseCountProperty',
+								mustBeTypeOf: ['string'],
+								notNull: true
+							}
+						]
+					},
+					{
+						configPropertyName: 'page',
+						mustBeTypeOf: ['number'],
+						defaultValue: 1
+					},
+					{
+						configPropertyName: 'maxValues',
+						mustBeTypeOf: ['number'],
+						defaultValue: 10
+					},
+					{
+						configPropertyName: 'maxValueSelect',
+						mustBeTypeOf: ['object'],
+						defaultValue: [10, 25, 50]
+					},
+					{
+						configPropertyName: 'morePagesIndicators',
+						mustBeTypeOf: ['bool'],
+						defaultValue: true
+					},
+					{
+						configPropertyName: 'morePagesIndicators',
+						mustBeTypeOf: ['number'],
+						defaultValue: 3
+					}
+				]
+			}
+	]
+   
+
+	
+	</script>
+</body>
+
+</html>
